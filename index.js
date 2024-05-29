@@ -42,7 +42,6 @@ app.get('/' , async (req , res) =>{
     }
 })
 
-
 app.get('/getall', async (req, res) => {
     try {
         const userData = await userModel.find({})
