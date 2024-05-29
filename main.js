@@ -4,6 +4,7 @@ import dotenv from 'dotenv'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import route from './routes/userRoute.js'
+import { userModel } from './models/userSchema.js'
 
 dotenv.config()
 
@@ -24,6 +25,11 @@ app.listen(port , () =>{
 
 app.use("/api" , route)
 
-app.get('/' , (req , res) =>{
-    res.send("welcome to my api")
+app.get('/' , async (req , res) =>{
+    try {
+        const allData = await userModel.find({})
+        res.json(allData)
+    } catch (error) {
+        console.log(error);
+    }
 })
