@@ -1,4 +1,11 @@
 {
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/"
+        }
+    ],
+    
     "version": 2,
     "builds": [
         {
@@ -11,11 +18,5 @@
             "src": "/(.*)",
             "dest": "/app.js"
         }
-    ], 
-        "rewrites": [
-            {
-                "source": "/(.*)",
-                "destination": "/"
-            }
-        ]
+    ]
 }
